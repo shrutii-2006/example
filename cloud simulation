@@ -1,0 +1,29 @@
+package org.cloudbus.cloudsim.examples;
+import org.cloudbus.cloudsim.core.CloudSim;
+import org.cloudbus.cloudsim.Vm;
+public class SimpleVmCreation {
+public static void main(String[] args) {
+try {
+// Initialize CloudSim
+
+Cloud Computing Lab
+
+Roll No.: 24251A12 Name: Page No.:
+CloudSim.init(1, null, false);
+// Create a VM
+Vm vm = createVm();
+// Print VM information
+System.out.println("VM created: " + vm.getId());
+// Start the simulation (although no datacenter is created)
+CloudSim.startSimulation();
+CloudSim.stopSimulation();
+System.out.println("Simulation finished!");
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+private static Vm createVm() {
+// Create and return a VM with specified parameters
+return new Vm(0, 0, 1000, 1, 512, 1000, 10000, "Xen", null);
+}
+}
